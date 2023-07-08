@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vuln HRMS 1.0 - SQL Injection Training Site</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/game.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <h1>👋 Hey there!</h1>
+        <p>
+            Welcome to Vuln HRMS 1.0! This training site is designed to simulate SQL injection vulnerabilities.
+            It stores employee information using an SQLite database and provides an API for retrieving employee details.
+        </p>
+        <p>
+            We believe that a good way to learn SQL is to try different approaches over and over again until you
+            realize it. Feel free to experiment and test your SQL skills here!
+        </p>
+        <p>
+            All the resources you need to overcome this challenge are available through Google and other online
+            references. Don't hesitate to explore and learn!
+        </p>
+        <p>
+            To learn more about the available endpoints and their usage, please refer to the API documentation.
+            You can access the documentation <a href="/docs" target="_blank">here</a>.
+        </p>
+
+        <hr>
+
+        <h2>Game Questions</h2>
+        {% for question in questions %}
+            {% set index = loop.index %}
+            <form id="question{{ index }}">
+                <h3>{{ question.question }}</h3>
+                <input type="text" id="question{{ index }}_answer">
+                <input type="submit" value="Submit">
+            </form>
+            <button class="hint-button" data-question-index="{{ index }}">Get Hint</button>
+            <br>
+            <div class="hint-container" id="question{{ index }}_hints"></div>
+            <br>
+        {% endfor %}
+    </div>
+
+    <!-- Congratulations Modal -->
+    <div id="congratulations-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Congratulations! 🏆</h2>
+            <p>You have successfully completed the Vuln HRMS 1.0 SQL Injection Training Site.</p>
+            <p>Keep practicing and exploring to enhance your SQL skills!</p>
+        </div>
+    </div>  
+</body>
+</html>
