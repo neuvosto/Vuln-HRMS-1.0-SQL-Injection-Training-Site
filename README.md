@@ -7,7 +7,7 @@ Welcome to Vuln HRMS 1.0, a SQL injection training site designed to simulate SQL
 1. Clone the repository:
    ```bash
    git clone https://github.com/neuvosto/Vuln-HRMS-1.0-SQL-Injection-Training-Site.git
-   cd vuln-hrms
+   cd Vuln-HRMS-1.0-SQL-Injection-Training-Site
    
 2. Set up the Project Create a new directory for your project and navigate to it in your terminal. Then, create a virtual environment and activate it:
    ```bash
