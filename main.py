@@ -433,6 +433,11 @@ questions = [
     }
 ]
 
+def default_settings():
+    for question in questions:
+        question["hint_index"] = 0
+        question["correct"] = False
+
 def is_final():
     number_correct = 0
     for question in questions:
@@ -442,6 +447,7 @@ def is_final():
 
 @app.get("/", include_in_schema=False)
 async def index(request: Request):
+    default_settings()
     return templates.TemplateResponse("index.html", {"request": request, "questions": questions})
 
 @app.post("/answers/{question_idx}", include_in_schema=False)
